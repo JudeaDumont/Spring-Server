@@ -1,0 +1,6 @@
+This Templates Directory is used by thymeleaf to provide the server with a context in which
+HTML will be parsed for particular entities that need to be replaced with serverside knowledge
+
+For example, the server knows what the CSRF Token information is,
+This information can be embedded in the page that is served to the client upon request,
+but SHOULD NOT be sent to the client or retrievable client side in general.

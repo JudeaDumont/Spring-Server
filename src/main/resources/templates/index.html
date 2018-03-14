@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+    <!--Spring looks at the within web resource context, not the application context-->
+    <script src="/requester.js"></script>
+</head>
+<body>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]! </h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+    <button onclick="sendGetRequest(`/greeting`)"> Greeting </button>
+    <p id="textID">placeholder</p>
+    <a href="sock.html">SOCKS</a>
+</body>
+</html>

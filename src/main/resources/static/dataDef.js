@@ -1,0 +1,62 @@
+
+//todo: make model definition: each abstract Property is mapped to its raw property operands
+
+let dataDefinition = {
+    unclassified:{
+        status:{
+            YEAR:"String",
+            TIME1:"String",
+            TIME2:"String",
+            TIME3:"String",
+            TIME4:"String",
+            AZ:"Double",
+            EL:"Double",
+            RANGE:"String",
+            RRATE:"String",
+            XMTR:"String",
+            M34:"String",
+            SAB:"Integer",
+            ANTMODE:"String",
+            CMDBUFF:"Integer",
+            ACTIVE:"String",
+            ECHO_MODE:"String",
+            AGC1:"String",
+            AGC2:"String",
+            AGC3:"String",
+            AGC4:"String",
+            RWS:"String",
+            IDLE_MODE:"String",
+            CMD_RATE:"Integer",
+            CMD_ENABLED:"String",
+            CMD_MODE:"Integer",
+            AZ_DELTA:"Double",
+            EL_DELTA:"Double",
+            RANGE_DELTA:"Integer",
+            PCMSIM_ENABLED:"String",
+            SV_CMDS_SENT:"Integer",
+            SV_CMDS_RCVD:"Integer",
+            AGC_VALUE:"Integer"
+        }
+    },
+    classified:{
+        update:{
+            CMD_SRC:"String",
+            CMD_DST:"String",
+            CMD_ECHO:"String",
+            CMD_TERM:"String",
+            PRIOPEN:"String",
+            PRICONNECT:"String",
+            SECOPEN:"String",
+            SECCONNECT:"String",
+            SYSTIME: "String",
+            CLIENTS:"String",
+            PRI_ADCCP_MSG_SENT:"Integer",
+            PRI_ADCCP_MSG_RCVD:"Integer",
+            SEC_ADCCP_MSG_SENT:"Integer",
+            SEC_ADCCP_MSG_RCVD:"Integer",
+            PRI_CONNECT_FAILURE:"String",
+            SEC_CONNECT_FAILURE:"String",
+            TASKSTATUS:"String"
+        }
+    }
+}

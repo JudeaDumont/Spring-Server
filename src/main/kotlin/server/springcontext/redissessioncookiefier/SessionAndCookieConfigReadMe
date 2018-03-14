@@ -1,0 +1,6 @@
+Changes to the session config can be seen in the cookies of the browser that is
+securely connected to the spring server.
+
+Redis is what stores sessions.
+
+And the custom cookie definition is also defined in the session configuration as well.

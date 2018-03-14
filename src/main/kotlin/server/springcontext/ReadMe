@@ -1,0 +1,19 @@
+The spring server files cannot be split into different packages
+without making sure that every dependency for the spring server file is referenced elsewhere.
+
+To separate any file from being in the same package outside of where the application file is,
+there must be additional dependency reference.
+
+Essentially every file that is used by the spring server must be treated as a configuration file that
+the spring server cannot run without referencing a dependency to that file in the application context.
+
+The modules themselves should know the name of their configurations
+
+A client could still be interested in a module even though the module isnt loaded
+
+There is a notion of modules being staged
+
+//App module constructor takes a callback that gets called when the app process raw data into high level properties
+//App module is not passed raw properties, it knows the channel for which its raw properties come in to be processed into the app specific module
+//Delta Engine needs to be a generic class that anything can use
+//delta engine goes inside each app module, deltas on raw props, and on computed props that go out

@@ -1,0 +1,92 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.2.21'
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'java'
+
+apply plugin: 'idea'
+apply plugin: 'kotlin-spring'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+//I think this is only used when you are deploying to a jar file.
+jar {
+    baseName = 'gs-securing-web'
+    version =  '0.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.9.RELEASE'
+
+    //Sessions stored redis side
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '1.5.9.RELEASE'
+    compile group: 'org.springframework.session', name: 'spring-session', version: '1.3.1.RELEASE'
+
+//    compile group: 'org.springframework.session', name: 'spring-session-data-redis', version: '1.0.1.RELEASE'
+//    compile group: 'org.springframework', name: 'spring-context', version: '3.0.2.RELEASE'
+//    compile group: 'org.springframework', name: 'spring-core', version: '5.0.2.RELEASE'
+
+    //Redis communications
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: '1.7.5.RELEASE'
+    compile group: 'redis.clients', name: 'jedis', version: '2.8.2'
+
+    compile("org.springframework.security:spring-security-messaging")
+//	compile("org.springframework.session:spring-session")
+
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.webjars:webjars-locator")
+    compile("org.webjars:sockjs-client:1.0.2")
+    compile("org.webjars:stomp-websocket:2.3.3")
+    compile("org.webjars:bootstrap:3.3.7")
+    compile("org.webjars:jquery:3.1.0")
+
+    compile("org.springframework.ldap:spring-ldap-core")
+    compile("org.springframework.security:spring-security-ldap")
+    compile("org.springframework:spring-tx")
+    compile("com.unboundid:unboundid-ldapsdk")
+
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //uncomment this line and then comment it back out to solve dependency issues with web
+//	testCompile("org.springframework.web:spring-boot-starter-test")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.springframework.security:spring-security-test")
+}

@@ -1,0 +1,3 @@
+Getting these tests to work would be a good addition to the environment.
+
+The current test will test if the session token is being processed through redis etc.

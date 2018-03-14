@@ -1,0 +1,14 @@
+The spring server will look here for application properties.
+In the application properties you will find magical configuration settings that are all interpreted
+spring side.
+
+There are tricks such that how those configurations are interpreted can be changed.
+
+The way that works is by referencing a class in the spring context directory that extends said configclass,
+and overriding the methods that would handle said configuration specifically,
+
+Spring is set to handle itself with default implementation.
+
+So when things break, it is not obvious that they are broken unless you know what the default behaviour looks like.
+Or if the intended behaviour is known well enough.
+

@@ -1,0 +1,23 @@
+Client Interests
+
+A client can be interested in a category.
+
+If a client specifies a property name that is already in a category of interest,
+
+the property name is essentially ignored, and they recieve all the messages from the category
+
+If the client were to remove that category from their interests, the property would still be ignored.
+
+If a client specifies a property name that is not within their categories of interest
+
+That category is placed in the "category all" but not the "categorywhole" container
+
+If they attempt to remove the category to which their specified property belongs,
+they will recieve the specified property still.
+
+Property names are deemed a completely separate concern compared to categories of interest UNLESS
+
+the specified property name belongs to a category to which the client has interest. At which point
+the property name is ignored. And only the category is used then on out.
+
+The mechanism for properties is used by checking a clients
